@@ -1,0 +1,19 @@
+{% include 'Navbar.html' %}
+
+
+
+<div class="container">
+	<div class="row mt-2">
+{% for k in Details %}
+<div class="col-3  p-4 text-center rounded mb-5">
+	<div class="card" style="width: 14rem;">
+  <img src="{{k.Image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{k.name}}</h5>
+    <h6 class="fw-bold">{{k.Price}}</h6>
+  
+    <a href="{% url 'DProduct' id=k.id %}" class="btn btn-primary">View More</a>
+  </div>
+  </div>
+</div>
+  	{% endfor %}

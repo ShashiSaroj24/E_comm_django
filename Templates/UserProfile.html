@@ -1,0 +1,40 @@
+{% extends 'Sidebar.html' %}
+{% block content %}
+
+{% if user.UserImage %}
+<img src="{{user.UserImage.url}}" height="150px" width="180px" style="margin-left: 470px; " class="rounded-circle mt-3">
+{% else %}
+<img src="../Profile.jpg">
+{% endif %}
+<div class="row">
+  <div class="col-4 mt-3" >
+      <h3 class="text-center mt-4">Name</h3></div>
+  <div class="col-4 mt-3" >
+    	<p class="text-center mt-4 " style="font-size: 25px;">{{user.name}}</p></div>
+    </div><
+    <div class="row">
+       <div class="col-4 mt-3" >
+    	<h3 class="text-center">Email</h3></div>
+       <div class="col-4 mt-3" >
+      <p	class="text-center" style="font-size: 25px;">{{user.Email}}</p></div>
+
+    <div class="row">
+       <div class="col-4 mt-3" >
+      <h3 class="text-center">Age</h3></div>
+       <div class="col-4 mt-3" >
+      <p class="text-center" style="font-size: 25px;">{{user.userAge}}</p></div>
+    
+    <div class="row">
+       <div class="col-4 mt-3" >
+      <h3 class="text-center">Address</h3></div>
+       <div class="col-4 mt-3" >
+    <p class="text-center" style="font-size: 25px;">{{user.userAddress}}</p></div>
+    
+   <div class="row">
+     <div class="col-4 mt-3" >
+    <h3 class="text-center">Bio</h3></div>
+     <div class="col-4 mt-3" >
+    <p class="text-center" style="font-size: 25px;">{{user.UserBio}}</p></div>
+  
+
+  {% endblock %}

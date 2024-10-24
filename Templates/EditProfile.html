@@ -1,0 +1,51 @@
+{% extends 'Sidebar.html' %}
+{% block content %}
+<h1 class="text-center mb-5">EDIT PROFILE</h1>
+<form method="POST" action="" enctype="multipart/form-data">
+{% csrf_token %}
+
+<!-- FIRST ROW -->
+ <div class="row ms-5">
+  <div class="col-5 mb-3 mt-4">
+  	<label class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" value="{{user.name}}" >
+  </div>
+  <div class="col-5 mb-3 mt-4">
+  <label class="form-label">Email</label>
+  <input type="email" class="form-control" name="Email" value="{{user.Email}}" disabled readonly >
+ </div>
+</div>
+<!-- SECOND ROW -->
+<div class="row ms-5">
+<div class="col-5 mb-3 mt-4">
+  	<label class="form-label">Age</label>
+    <input type="text" class="form-control" value="{{user.userAge}}" name="AGE">
+  </div>
+  <div class="col-5 mb-3 mt-4">
+  	<label class="form-label">Address</label>
+    <input type="text" class="form-control" value="{{user.userAddress}} " name="HC">
+  </div>
+</div>
+<!-- THIRD ROW -->
+<div class="row ms-5">
+<div class="mb-3 col-10">
+  <label class="form-label">Bio</label>
+  <textarea class="form-control" name="Bo" value="{{user.UserBio}} "rows="4"></textarea>
+</div>
+</div>
+<!-- Profile  Pic -->
+<div class="row ms-5">
+  <div class="col-4 mb-5">
+    <h3 class="mb-3 mt-3">Upload Image</h3>
+    image
+    <input type="file" name="profile">
+  </div>
+</div>
+<!-- End of Profile pic -->
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button class="fw-bold border border-0 ms-5"style="background-color:#9cf6f6;width: 200px;height: 40px;" type="Submit">Confirm Changes</button>
+</div>
+
+</form>
+{% endblock %}
+

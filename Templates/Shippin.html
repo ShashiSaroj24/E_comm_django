@@ -1,0 +1,44 @@
+
+{% include 'Navbar.html' %}
+
+ <form method="POST" action="">
+ <div class="row ms-5 mb-4" >
+{% csrf_token %}
+<h2 class="text-center mt-3 mb-2" style="color:#FD777A;">Shipping Address</h2>
+	<div class="col-md-4">
+    <label  class="form-label">Full Name</label>
+    <input type="text" class="form-control" id="Name" name="fn">
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label">Country</label>
+    <input type="text" class="form-control" id="Cont" name="con">
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label">State</label>
+    <input type="text" class="form-control" id="Stat" name="ste">
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label">City</label>
+    <input type="text" class="form-control" id="Cit" name="ci">
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label">pincode</label>
+    <input type="text" class="form-control" id="pinC" name="pc">
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label">phone number</label>
+    <input type="text" class="form-control" id="Number" name="pn">
+  </div>
+   <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" class="form-control" id="inputAddress" name="adr">
+  </div>
+  <div class="d-grid gap-2 col-6 mt-5 mx-auto">
+  <button class="btn btn-outline-danger" type="button">Confirm</button>
+   <button class="btn btn-outline-dark" type="button">Old Address</button>
+</div>
+
+</div>
+</form>
+
+{% include 'Footer.html' %}

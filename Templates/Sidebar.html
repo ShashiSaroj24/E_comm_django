@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <style type="text/css">
+   	.w-47{width: 374px;
+   		  padding-left: 20px;
+   	       }
+   	.h-392{height: 714px;}
+   	.
+   	   </style>
+</head>
+<body>
+	
+  <div class="row">
+  	<!-- side bar -->
+    <div class="col-md-3 h-392  " style="background-color:#ff7477;color:#0a141b;">
+    <!-- Profile pic -->
+    <div class="mt-5">
+    	<img src="{%static 'Images/contact.png'%}" class="rounded w-25 mx-auto d-block" alt="..."></div>
+
+    	<h3 class="text-center mb-5"> {{user.name}}<h3>
+    		<div class="btn-group-vertical " role="group" aria-label="Vertical button group" >
+
+    		<button class="w-47 border-top text-start ps-4 "style="background-color:#ceb5b7;color:#0a141b;"> <i class="bi bi-person-lines-fill"></i> My Profile</button>
+    		<button class=" w-47 border-top text-start ps-4"style="background-color:#ceb5b7;color:#0a141b;"> <i class="bi bi-pencil-fill"></i> Edit Profile </button> 
+    		<button class=" w-47 border-top text-start ps-4"style="background-color:#ceb5b7;color:#0a141b;"> <i class="bi bi-key-fill"></i> Change Password </button> 
+    		<button class=" w-47 border-top text-start ps-4"style="background-color:#ceb5b7;color:#0a141b;"><i class="bi bi-stars"></i> Review </button> 
+    		<button class="mt-5 w-47 border border-0 text-start text-center " style="background-color:#DC3545;color:#0a141b ;"><a href="{% url 'logout' %}"> Logout</a></button>
+</div>    	
+    </div>
+    <!-- end of side bar -->
+    <div class="col-md-9">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+</body>
+</html>

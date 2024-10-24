@@ -1,0 +1,43 @@
+{% include 'Navbar.html' %}
+
+<div class="container">
+<div class="row mt-4">
+<div class="col-3 p-4 text-center">
+	<img  src="{{cast.Product_image.url}}" class="img-thumbnail" alt="...">
+</div>
+<div class="col-9 p-4 text-start">
+	 <h5 class="fw-bold ">{{cast.Product_name}}</h5>
+	 <p class="">{{cast.Category}}</p>
+	 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  
+		<form action="/add_to_cart" method ="POST">
+			{% csrf_token %}
+			<input type="text" hidden  name="product_id" value="{{cast.id}}">
+			<button type="submit"  class="btn btn-primary" 
+			style="background-color: #ff7477; color: black;"> add to cart</button>
+	
+		 </form>
+	
+	
+	
+	
+	
+	</div>
+	 <hr>
+	 <h4 >Price: <span class="fw-bold"> {{cast.Product_price}} </span></h4>
+	 <h4>Stocks: <span style="color:#DF7921">{{cast.Product_quantity}}</span></h4>
+	 
+	 
+	 <p class="text-center mt-5">{{cast.Product_description}}</p>
+
+
+
+
+	 
+</div>
+</div>
+
+</div>
+
+{% include 'Footer.html' %}
+

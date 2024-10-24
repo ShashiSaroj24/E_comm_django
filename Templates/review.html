@@ -1,0 +1,27 @@
+{% extends 'Sidebar.html' %}
+	{% block content %}
+	<style type="text/css">
+	  .w-55{
+              width: 60%;
+              }
+    .mt-56{
+           margin-top: 8%;
+           }
+       </style>
+      
+		 
+   <div class="bg-light p-5 mx-auto mt-56 rounded w-55" >
+	 <h1 class="text-center mb-5"style="color: #ff7477;">Review</h1>
+	 <form>
+<div class="mb-3 ">
+	<h5 class="">Your Review</h5>
+	 <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+ </div>
+ <div class="text-center p-1 mt-3 ">
+<button type="button" class="btn btn-sm rounded-pill mb-3  " style="background-color:#9cf6f6;width: 200px;height: 40px;">Send Review</button>
+</div>
+</form>
+</div>
+
+
+	{% endblock %}

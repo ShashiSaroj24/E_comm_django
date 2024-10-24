@@ -1,0 +1,81 @@
+{% include 'Navbar.html' %}
+<h2 class="text-center">Shipping  Cart</h2>
+
+<div class="container">
+<div class="row">
+    <div class="col-md-8">
+        <h3>Cart Items</h3>
+        <hr/>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">sno</th>
+                <th scope="col">Product name</th>
+                <th scope="col">image</th>
+                <th scope="col">qty</th>
+                <th scope="col">price</th>
+              </tr>
+            </thead>
+            <tbody>
+
+{% for i in cart_data %}
+<tr>
+    <th scope="row">{{forloop.counter}}</th>
+    <td>{{i.product.Product_name}}</td>
+    <td><img src="{{i.product.Product_image.url}}" width="50px" height="50px"></td>
+    <td>
+<form method="POST" action="{% url 'decrement_quantity' i.id %}">
+    {% csrf_token %}
+     <button type="submit"> - </button> 
+</form>
+      {{i.quantity}}
+
+
+<form method="POST" action="{% url 'Increment_quantity' i.id %}">
+    {% csrf_token %}
+
+      <button> + </button>
+</form>
+
+
+       </td>
+    <td>{{i.product.Product_price}}Rs.</td>
+    <td> <button>Remove</button> </td>
+   
+  </tr>
+
+{% endfor %}
+
+
+</tbody>
+</table>
+    </div>
+
+
+
+    <div class="col-md-4">
+        <div class="card card-body">
+            <h2> The Total Amount of</h2>
+            <hr/>
+            <table class="table">
+                <tr>
+                    <th>Amount</th>
+                    <td>Rs.{{amount}}</td>
+                </tr>
+                <tr>
+                    <th>Shipping</th>
+                    <td>Rs.40.00</td>
+                </tr>
+                <tr>
+                    <th class="bg-info-subtle">Total (including GST)</th>
+                    <th class="bg-info-subtle"> Rs. {{total_amount}}</th>
+                </tr>
+            </table>
+
+            <button class="btn btn-success">Pay now</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% include 'Footer.html' %}

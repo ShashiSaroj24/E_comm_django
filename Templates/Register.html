@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+{% include "Navbar.html" %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registeration Form</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
+   <link rel="stylesheet" type="text/css" href="{%static 'Main.css' %}">
+   <style type="text/css">
+        .w-55{
+              width: 35%;
+              }
+    .mt-56{
+           margin-top: 8%;
+           }
+   </style>
+</head>
+<body class="bg-cl">
+	<!-- Start of the register page -->
+	<div class="bg-light p-5 mx-auto mt-56 rounded w-55" >
+  <h1 class="text-center mb-5"style="color: #ff7477;">Registration</h1>
+
+{% if msg %}
+<div class="alert alert-info">
+  {{msg }}
+</div>
+{% endif %}
+
+  <form method="POST" action="">
+    <!-- Its a must add so that the program can work -->
+    {% csrf_token %}
+		<div class="mb-3 ">
+    
+  <input type="text" class="form-control rounded-pill w-75  mx-auto"  name="nm"  placeholder="Name">
+ </div>
+ <div class="mb-3 ">
+  <input type="email" class="form-control rounded-pill w-75  mx-auto"  name="em"  placeholder="Email Address">
+ </div>
+<div class="mb-3 ">
+  <input type="password" class="form-control rounded-pill w-75  mx-auto"  name="pw"  placeholder="Password">
+ </div>
+ <div class="mb-3 ">
+  <input type="text" class="form-control rounded-pill w-75  mx-auto"  name="cpw"  placeholder="Confirm Password">
+</div>
+ <table class="table mx-auto table-light table-borderless" style="width: 80%">
+ 	<tr><td><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+   By clicking Register, the user agree to the Terms and Conditions set out by this site.
+</label>
+</div>
+</td>
+</tr>
+</table>
+<div class="text-center p-1">
+<button type="submit" class="btn btn-sm rounded-pill mb-3 " style="background-color:#9cf6f6;width: 200px;height: 40px;">Register</button>
+
+</div>
+</form>
+
+	<div class="text-success-emphasis fw-bold text-center "><small>Already Have an account ? <a href="Login.Html" class=" text-decoration-none " style="color:#ff7477"> Login Here</a></small></div>
+
+</div>
+
+
+</body>
+</html>

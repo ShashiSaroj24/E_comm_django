@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+{% include "Navbar.html" %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
+   <link rel="stylesheet" type="text/css" href="{%static 'Main.css' %}">
+   <style type="text/css">
+        .w-55{
+              width: 35%;
+              }
+        .mt-56{
+               margin-top: 8%;
+              }
+              .icon{ font-size: 30px;}
+        .ms-69{
+                 margin-left: 70px;
+               }
+        .me-7{
+                 margin-right: 47%;
+             }
+
+
+   </style>
+</head>
+<body>
+	 <div class="container p-5  ">
+  
+  <div class="row w-75 mx-auto justify-content-center mb-4 mt-4">
+    <!-- location -->
+     <div class="col-md-4">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-3">
+       <i class="bi bi-geo-alt-fill  p-3 text-white rounded "style="background-color: #ff7477;color:#ff7477 ;"></i>
+     </div>
+      <div class="col-lg-8">
+
+      <div class="service-contents">
+
+        <p class="text-secondary">7000 Midland Blvd
+                                  Amelia, Ohio, 45102 </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- message -->
+      <div class="col-md-4">
+        <div class="row justify-content-center">
+          <div class="col-lg-3">
+        <i class="bi bi-envelope-fill bgter p-3 text-white rounded "style="background-color: #ff7477;color:#ff7477 ;"></i>
+      </div>
+
+        <div class="col-lg-8">
+
+        <div class="service-contents">
+                      <p class="text-secondary">ECom@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- phone -->
+
+      <div class="col-md-4">
+        <div class="row justify-content-center">
+
+      <div class="col-lg-3">
+        <i class="bi bi-telephone-fill bgter p-3 text-white rounded "style="background-color: #ff7477;color:#ff7477 ;"></i></div>
+
+        <div class="col-lg-8">
+
+        <div class="service-contents">
+                      <p class="text-secondary">+1 294 3925 3939</p></div></div></div>
+  </div>
+</div>
+<!-- </form> -->
+{% if msg %}
+<div class="alert alert-info">
+  {{msg }}
+</div>
+{% endif %}
+  <div class="container w-75 p-5">
+  <div class="row ">
+    <form method="POST" action="">
+    {% csrf_token %}
+    <div class="col-md-6">
+          <div class="mb-2">
+      <label for="exampleFormControlInput1" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="fn" >
+    </div>
+    </div>
+    <div class="col-md-6">
+      
+      <div class="mb-2">
+  <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="ln">
+</div>
+    </div>
+  </div>
+  <div>
+    <div class="mb-2">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" name="ea">
+    </div>
+  </div>
+  <div>
+    <div class="mb-2">
+  <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="m"></textarea>
+</div>
+  </div>
+  <div class="mt-4">
+    <button class="btn  btn-lg  rounded-pill" style="background-color:#9cf6f6;color: #0a141b;" type="submit">Send Message</button>
+  </form>
+  </div>
+</div>
+</div>
+{% include "Footer.html" %}
+</body>
+</html>

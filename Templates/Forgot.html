@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+{% include "Navbar.html" %}
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Forgot Passowrd?</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
+   <link rel="stylesheet" type="text/css" href="{%static 'Main.css' %}">
+   <style type="text/css">
+        .w-55{
+              width: 35%;
+              }
+    .mt-56{
+           margin-top: 8%;
+           }
+
+   </style>
+</head>
+<body class="bg-cl">
+	<div class="bg-light p-5 mx-auto mt-56 rounded w-55" >
+  <h1 class="text-center mb-5"style="color: #ff7477;">Forgot Your Password?</h1>
+  <p>{{rest}}</p>
+  <form method="POST" action="">
+    {% csrf_token %}
+  	<div class="mb-3 ">
+  <input type="email" class="form-control rounded-pill w-75  mx-auto" id="em" name="e"  placeholder="Your Email Address">
+ </div>
+ <div class="text-center p-1">
+<button type="submit" class="btn  btn-sm rounded-pill" style="background-color:#9cf6f6;width: 200px;height: 40px;">Reset My Password</button>
+
+</div>
+ <div class="text-center mt-2"><small>Press the button , then an email will be sent on your respective account from which the user can reset the password.</div>
+<div class="text-success-emphasis fw-bold text-center mt-2 "><small>Remember the password ? <a href="login" class=" text-decoration-none " style="color: #ff7477;"> Login Here</a></small></div>
+</small>
+</div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+	{% extends 'Sidebar.html' %}
+	{% block content %}
+	<style type="text/css">
+	  .w-55{
+              width: 60%;
+              }
+    .mt-56{
+           margin-top: 8%;
+           }
+       </style>
+      
+		 
+   <div class="bg-light p-5 mx-auto mt-56 rounded w-55" >
+	 <h1 class="text-center mb-5"style="color: #ff7477;">Change Password</h1>
+	 <form method="POST" action="">
+	  {% csrf_token %}
+<div class="mb-3 ">
+	<h5 class="ms-5">Old Password</h5>
+  <input type="password" class="form-control rounded-pill w-75  mx-auto" name="opw" id="pass" >
+ </div>
+ <div class="mb-3 ">
+ 	<h5 class="ms-5">New Password </h5>
+  <input type="password" class="form-control rounded-pill w-75  mx-auto" name="npw" id="NP" >
+</div>
+ <div class="mb-3 ">
+ 	<h5 class="ms-5">Confirm Password</h5>
+  <input type="password" class="form-control rounded-pill w-75  mx-auto" name="pw" id="CP"  >
+</div>
+<div class="text-center p-1 mt-3">
+<button type="submit" class="btn btn-sm rounded-pill mb-3 " style="background-color:#9cf6f6;width: 200px;height: 40px;">Change</button>
+</div>
+</form>
+</div>
+
+
+	{% endblock %}
+
